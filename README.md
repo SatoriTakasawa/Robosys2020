@@ -33,3 +33,8 @@ $ echo [コマンド] > /dev/myled0
 ・3のとき：4つのLEDが対角線上に点滅(速度が変化)
 
 ・0のとき：LEDが消える
+
+
+## 動画URL
+[Youtube](https://youtu.be/rtgkgXmA7jo)
+
