@@ -15,7 +15,7 @@
 
 
 ## 実行方法
-``$ sudo make  
+``:$ sudo make  
                              
 $ sudo insmod myled.ko
                               
