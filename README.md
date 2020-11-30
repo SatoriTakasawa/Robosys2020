@@ -15,13 +15,13 @@
 
 
 ## 実行方法
-`$ sudo make  
+`$ sudo make`  
 
- $ sudo insmod myled.ko
+`$ sudo insmod myled.ko`
  
- $ chmod 666 /dev/myled0    
+`$ chmod 666 /dev/myled0 `   
  
- $ echo [コマンド] > /dev/myled0`
+`$ echo [コマンド] > /dev/myled0`
 
 
 ## コマンドの動作内容
