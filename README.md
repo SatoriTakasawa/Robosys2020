@@ -21,7 +21,7 @@
  
  $ chmod 666 /dev/myled0    
  
- $ echo [コマンド] > /dev/myled0    `
+ $ echo [コマンド] > /dev/myled0`
 
 
 ## コマンドの動作内容
