@@ -70,7 +70,7 @@ static ssize_t led_write(struct file* filp, const char* buf, size_t count, loff_
 
 	}else if (c == '3'){
 		for(i = 0; i < 5; i++){
-		n = 500 - 100*i;
+		number = 500 - 100*i;
 		gpio_base[7] = 1 << 18;
 		msleep(number);
 		gpio_base[10] = 1 << 18;
