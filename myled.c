@@ -49,8 +49,8 @@ static ssize_t led_write(struct file* filp, const char* buf, size_t count, loff_
 		gpio_base[10] = 1 << 23;
 		gpio_base[10] = 1 << 18;
 		msleep(300);
-	
         	}	
+		
 	}else if (c == '2'){
 		for(i = 0; i < 3; i++){
 		number = 300 - 100*i;
@@ -88,7 +88,6 @@ static ssize_t led_write(struct file* filp, const char* buf, size_t count, loff_
 		gpio_base[10] = 1 << 25;
 		gpio_base[10] = 1 << 23;
 		gpio_base[7] = 1 << 18;
-
 		}
 	}
 	return 1;
