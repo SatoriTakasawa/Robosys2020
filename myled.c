@@ -24,7 +24,7 @@ static volatile u32 *gpio_base = NULL;
 
 static ssize_t led_write(struct file* filp, const char* buf, size_t count, loff_t* pos)
 {
-	int i,n;
+	int i,number;
 	char c;
 	if(copy_from_user(&c, buf, sizeof(char)))
 		return -EFAULT;
@@ -39,7 +39,6 @@ static ssize_t led_write(struct file* filp, const char* buf, size_t count, loff_
 
 	}else if (c == '1'){
 		for(i = 0; i < 5; i++){
-		n = 500 - 100*i+1;
 		gpio_base[7] = 1 << 25;
 		gpio_base[7] = 1 << 24;
 		gpio_base[7] = 1 << 23;
@@ -50,46 +49,45 @@ static ssize_t led_write(struct file* filp, const char* buf, size_t count, loff_
 		gpio_base[10] = 1 << 23;
 		gpio_base[10] = 1 << 18;
 		msleep(300);
-	
         	}	
+		
 	}else if (c == '2'){
 		for(i = 0; i < 3; i++){
-		n = 300 - 100*i;
+		number = 300 - 100*i;
 		gpio_base[7] = 1 << 25;
-		msleep(n);
+		msleep(number);
 		gpio_base[10] = 1 << 25;
 		gpio_base[7] = 1 << 24;
-		msleep(n);
+		msleep(number);
 		gpio_base[10] = 1 << 24;
 		gpio_base[7] = 1 << 23;
-		msleep(n);
+		msleep(number);
 		gpio_base[10] = 1 << 23;
 		gpio_base[7] = 1 << 18;
-		msleep(n);
+		msleep(number);
 		gpio_base[10] = 1 << 18;
 		}
 
 	}else if (c == '3'){
 		for(i = 0; i < 5; i++){
-		n = 500 - 100*i;
+		number = 500 - 100*i;
 		gpio_base[7] = 1 << 18;
-		msleep(n);
+		msleep(number);
 		gpio_base[10] = 1 << 18;
 		gpio_base[7] = 1 << 25;
 		gpio_base[7] = 1 << 23;
-		msleep(n);
+		msleep(number);
 		gpio_base[10] = 1 << 25;
 		gpio_base[10] = 1 << 23;
 		gpio_base[7] = 1 << 24;
-		msleep(n);
+		msleep(number);
 		gpio_base[10] = 1 << 24;
 		gpio_base[7] = 1 << 25;
 		gpio_base[7] = 1 << 23;
-		msleep(n);
+		msleep(number);
 		gpio_base[10] = 1 << 25;
 		gpio_base[10] = 1 << 23;
 		gpio_base[7] = 1 << 18;
-
 		}
 	}
 	return 1;
